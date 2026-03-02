@@ -7,7 +7,20 @@
   <style>
     body { font-family: Arial, sans-serif; margin: 0; background: #f6f7fb; color: #111; }
     .container { max-width: 900px; margin: 0 auto; padding: 24px; }
-    .card { background: #fff; border-radius: 14px; padding: 18px; margin: 14px 0; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+    .card { 
+  background: #fff; 
+  border-radius: 14px; 
+  padding: 18px; 
+  margin: 14px 0; 
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
     .header { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
     .name { font-size: 34px; margin: 0; }
     .subtitle { margin: 6px 0 0 0; color: #444; line-height: 1.4; }
@@ -48,7 +61,7 @@
   I’m building additional skills in web development and cloud technologies through hands-on projects.
 </p>
 
-      <p class="small">Live site hosted using GitHub Pages.</p>
+      <!--  <p class="small">Live site hosted using GitHub Pages.</p> --> 
     </div>
 
     <div class="card">
