@@ -25,8 +25,18 @@
     .name { font-size: 34px; margin: 0; }
     .subtitle { margin: 6px 0 0 0; color: #444; line-height: 1.4; }
     .btns { display: flex; gap: 10px; flex-wrap: wrap; }
-    a.btn { text-decoration: none; padding: 10px 12px; border-radius: 10px; border: 1px solid #ddd; background: #fff; color: #111; }
-    a.btn:hover { border-color: #bbb; }
+    a.btn, button.btn { 
+  text-decoration: none; 
+  padding: 10px 12px; 
+  border-radius: 10px; 
+  border: 1px solid #ddd; 
+  background: #fff; 
+  color: #111; 
+  cursor: pointer;
+}
+
+    a.btn:hover, button.btn:hover { border-color: #bbb; }
+
     h2 { margin: 0 0 10px 0; }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
     .tag { display: inline-block; padding: 6px 10px; border-radius: 999px; background: #eef2ff; margin: 6px 6px 0 0; font-size: 14px; }
@@ -34,6 +44,33 @@
     .muted { color: #555; line-height: 1.5; }
     .small { font-size: 14px; color: #555; }
     footer { text-align: center; padding: 20px 0; color: #666; }
+    /* Dark mode */
+body.dark {
+  background: #0b1220;
+  color: #e6e6e6;
+}
+
+body.dark .card {
+  background: #111a2e;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+body.dark .muted,
+body.dark .small,
+body.dark .subtitle {
+  color: #b8c2d8;
+}
+
+body.dark a.btn {
+  background: #0f1a33;
+  color: #e6e6e6;
+  border-color: #2a3553;
+}
+
+body.dark .tag {
+  background: #1a2647;
+}
+
   </style>
 </head>
 <body>
@@ -47,6 +84,7 @@
 
         </div>
         <div class="btns">
+           <button class="btn" id="themeToggle" type="button">Dark mode</button>
           <a class="btn" href="https://www.linkedin.com/in/seerat-sawhney/" target="_blank">LinkedIn</a>
           <a class="btn" href="https://github.com/seerat-sawhney" target="_blank">GitHub</a>
         </div>
@@ -112,5 +150,25 @@
     <footer>© 2026 Seerat Sawhney</footer>
 
   </div>
+
+  <script>
+  const btn = document.getElementById('themeToggle');
+
+  // Load saved theme
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark') {
+    document.body.classList.add('dark');
+    btn.textContent = 'Light mode';
+  }
+
+  btn.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    const isDark = document.body.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    btn.textContent = isDark ? 'Light mode' : 'Dark mode';
+  });
+</script>
+
+  
 </body>
 </html>
