@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Seerat Sawhney - Portfolio</title>
-  <style>body { 
-  font-family: Arial, sans-serif; 
+  
+  <style>
+    body { 
+  font-family: 'Inter', Arial, sans-serif; 
   margin: 0; 
-  background: #f6f7fb; 
+  background: linear-gradient(135deg, #f6f7fb, #eef2ff); 
   color: #111;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
     .container { max-width: 900px; margin: 0 auto; padding: 24px; }
 .card { 
-  background: #fff; 
-  border-radius: 14px; 
-  padding: 18px; 
-  margin: 14px 0; 
-  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  background: #ffffff; 
+  border-radius: 16px; 
+  padding: 22px; 
+  margin: 16px 0; 
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
   transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -32,7 +35,7 @@
     .name { font-size: 34px; margin: 0; }
     .subtitle { margin: 6px 0 0 0; color: #444; line-height: 1.4; }
     .btns { display: flex; gap: 10px; flex-wrap: wrap; }
-    a.btn, button.btn { 
+  a.btn, button.btn { 
   text-decoration: none; 
   padding: 10px 12px; 
   border-radius: 10px; 
@@ -40,11 +43,22 @@
   background: #fff; 
   color: #111; 
   cursor: pointer;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
 }
 
     a.btn:hover, button.btn:hover { border-color: #bbb; }
 
-    h2 { margin: 0 0 10px 0; }
+   h1 {
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-weight: 500;
+  margin-bottom: 12px;
+}
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
     .tag { display: inline-block; padding: 6px 10px; border-radius: 999px; background: #eef2ff; margin: 6px 6px 0 0; font-size: 14px; }
     .project-title { margin: 0; }
@@ -68,7 +82,8 @@ body.dark .subtitle {
   color: #b8c2d8;
 }
 
-body.dark a.btn {
+body.dark a.btn,
+body.dark button.btn {
   background: #0f1a33;
   color: #e6e6e6;
   border-color: #2a3553;
